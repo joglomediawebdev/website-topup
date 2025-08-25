@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('navbar', function () {
+    return view('layouts.navbar');
+});
+
+Route::get('footer', function () {
+    return view('layouts.footer');
 });
