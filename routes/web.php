@@ -6,6 +6,14 @@ Route::get('game', function () {
     return view('game');
 });
 
+Route::get('promo', function () {
+    return view('promo');
+});
+
+Route::get('pembayaran', function () {
+    return view('pembayaran');
+});
+
 Route::get('navbar', function () {
     return view('layouts.navbar');
 });

@@ -179,44 +179,108 @@
     </ul>
 </nav>
 
-<!-- ===== Main Content ===== -->
-<div class="page-wrapper">
-    <div class="title-row">
-        <div class="back-icon"></div>
-        <div style="font-size:18px; font-weight:700;">Game</div>
-    </div>
 
-    <div class="search-bar">
-        <input class="search-input" type="text" placeholder="Cari game…" />
-        <div class="search-close">×</div>
-    </div>
+<!-- PROMO SECTION -->
+<style>
+    /* Container dan tata letak promo */
+    .promo-wrapper {
+        background-color: #7a5a8c33; /* ungu soft transparan */
+        padding: 24px 12px;
+    }
 
-    <div class="chip-row">
-        <div class="chip">Semua Produk</div>
-        <div class="chip">Flash Top-Up</div>
-        <div class="chip">Voucher</div>
-        <div class="chip">Game Lokal</div>
-    </div>
+    .promo-container {
+        max-width: 980px;
+        margin: 0 auto;
+        background-color: #7a5a8c66; /* ungu lembut */
+        border: 3px solid #6b21a8;
+        border-radius: 12px;
+        padding: 28px 18px 36px 18px;
+    }
 
-    <div class="section-title">A</div>
-    <div class="grid">
-        @for ($i = 0; $i < 6; $i++)
-            <div class="card">
-                <img class="card-media" src="{{ asset('images/genshin.png') }}" alt="Game">
-                <div class="card-title">Genshin Impact</div>
+    .promo-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .promo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 24px 0 38px 0;
+    }
+
+    .promo-banner {
+        width: 100%;
+        max-width: 720px;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+        border: 2px solid #4c1d95; /* ungu tua */
+    }
+
+    .promo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 13px;
+        margin-top: 10px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background-color: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .promo-link:hover { color: #c084fc; border-color: #c084fc; }
+
+    @media (max-width: 640px) {
+        .promo-container { padding: 18px 10px 26px 10px; }
+        .promo-banner { max-width: 100%; }
+    }
+</style>
+
+<div class="promo-wrapper">
+    <div class="promo-container">
+        <div class="promo-header">
+            <span>❮</span>
+            <span>Game</span>
+        </div>
+
+        <!--
+            Cara menambah/menghapus banner:
+            - Duplikasikan blok <div class="promo-item"> di bawah ini
+            - Ganti atribut src gambar dengan file Anda di folder public/images
+            - Ganti href pada tautan jika diperlukan
+        -->
+
+        <?php
+            // Anda bisa menambah atau menghapus item pada array ini secara manual
+            $promoBanners = [
+                [ 'src' => asset('images/cod-event.png'),  'href' => '#', 'alt' => 'Promo 1' ],
+                [ 'src' => asset('images/freefire-event.png'), 'href' => '#', 'alt' => 'Promo 2' ],
+                [ 'src' => asset('images/fc-mobile-event.png'),  'href' => '#', 'alt' => 'Promo 3' ],
+                [ 'src' => asset('images/event-kode-promo.png'), 'href' => '#', 'alt' => 'Promo 4' ],
+            ];
+        ?>
+
+        @foreach ($promoBanners as $promo)
+            <div class="promo-item">
+                <img class="promo-banner" src="{{ $promo['src'] }}" alt="{{ $promo['alt'] }}">
+                <a class="promo-link" href="{{ $promo['href'] }}">
+                    Baca Selengkapnya
+                    <img src="{{ asset('images/link.png') }}" alt="share" style="width:14px;height:14px;opacity:0.85;">
+                </a>
             </div>
-        @endfor
+        @endforeach
     </div>
-
-    <div class="section-title" style="margin-top:24px;">B</div>
-    <div class="grid">
-        @for ($i = 0; $i < 3; $i++)
-            <div class="card">
-                <img class="card-media" src="{{ asset('images/genshin.png') }}" alt="Game">
-                <div class="card-title">Belum tersedia</div>
-            </div>
-        @endfor
-    </div>
+    <div style="height:24px"></div>
+    <!-- spacer kecil sebelum footer -->
+    
 </div>
 
 <footer style="background-color: #3f2466; color: white; padding: 40px 0; width: 100%; margin: 0; box-sizing:border-box;">
