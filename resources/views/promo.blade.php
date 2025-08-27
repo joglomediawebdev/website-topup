@@ -2,7 +2,7 @@
     body {
         margin: 0;
         padding: 0;
-        background: #8f79a3 url('{{ asset('images/background-game-page.png') }}') no-repeat center center fixed; /* ungu + gambar */
+        background: #8f79a3 url('{{ asset('images/promo-background.png') }}') no-repeat center top fixed;
         background-size: full;
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
@@ -75,72 +75,51 @@
 
     .search-bar {
         position: relative;
-        height: 48px;                /* lebih tinggi biar oval */
+        height: 40px;
         display: flex;
         align-items: center;
-        padding: 0 44px 0 44px;      /* kiri & kanan cukup untuk ikon */
-        border-radius: 9999px;       /* full oval */
-        background: #5b4b66;         /* warna ungu sesuai gambar */
-        color: #fff;                 /* teks & ikon jadi putih */
-        box-shadow: 0 4px 6px rgba(0,0,0,0.25); /* shadow biar timbul */
+        padding: 0 44px 0 16px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.25);
+        border: 1px solid rgba(255,255,255,0.45);
+        color: #111827;
     }
-
     .search-input {
         flex: 1;
         border: none;
         outline: none;
         background: transparent;
-        color: #fff;                 /* teks input putih */
-        font-size: 16px;             /* agak lebih besar */
+        color: #111827;
+        font-size: 14px;
     }
-
-    .search-icon {
-        position: absolute;
-        left: 16px;
-        width: 20px;
-        height: 20px;
-        color: #fff;                 /* ikon kiri putih */
-        cursor: pointer;
-    }
-
     .search-close {
         position: absolute;
-        right: 16px;
-        width: 20px;
-        height: 20px;
-        color: #fff;                 /* hanya ikon X putih */
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        right: 12px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #7c6aa1;
+        color: #fff;
+        font-size: 12px;
+        display: grid;
+        place-items: center;
         cursor: pointer;
-        background: none;            /* hilangkan lingkaran background */
     }
 
     .chip-row {
-    display: flex;
-    justify-content: space-between; /* biar merata */
-    align-items: center;
-    gap: 16px; /* jarak antar chip */
-    margin: 12px 0 18px;
-    flex-wrap: nowrap; /* biar tetap satu baris */
+        display: flex;
+        gap: 12px;
+        margin: 12px 0 18px;
+        flex-wrap: wrap;
     }
-
     .chip {
-        flex: 1; /* semua chip punya lebar sama */
-        text-align: center;
-        background: #5b4b66;
-        color: #ffffff;
-        padding: 12px 0; /* tinggi lebih proporsional */
+        background: #e7def2;
+        color: #2c2150;
+        border: 1px solid #cbb6ec;
+        padding: 6px 12px;
         border-radius: 8px;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: 12px;
         cursor: pointer;
-        transition: background 0.3s;
-    }
-
-    .chip:hover {
-        background: #463553; /* warna lebih gelap saat hover */
     }
 
     .section-title {
@@ -201,7 +180,7 @@
     </ul>
 </nav>
 
-<!-- ===== Main Content ===== -->
+
 <div class="page-wrapper">
     <div class="title-row">
         <div class="back-icon"></div>
@@ -209,43 +188,75 @@
             Beranda
         </a>
     </div>
+    
+</div>
+<!-- PROMO SECTION NEW LAYOUT -->
+<style>
+    .promo-hero { max-width: 1100px; margin: 18px auto 10px; padding: 0 16px; }
+    .promo-hero-banner { width: 100%; border-radius: 10px; box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+    .promo-hero-cta { display: grid; place-items: center; margin-top: 10px; }
+    .btn-primary { background: linear-gradient(180deg, #A020F0); color: #fff; border: none; border-radius: 14px; padding: 12px 20px; font-weight: 800; cursor: pointer; box-shadow: 0 10px 20px rgba(124,32,255,.45); display:inline-flex; align-items:center; gap:8px; text-decoration:none; }
+    .btn-primary:hover { filter: brightness(1.06); }
 
-    <div class="search-bar">
-        <!-- Ikon search kiri -->
-        <img src="images/search.png" alt="Search" class="search-icon">
+    .promo-chips { display:flex; gap:24px; justify-content:center; margin: 18px 0 26px; flex-wrap:wrap; }
+    .promo-chip { background:#5b4b66; color:#ffffff; border:none; padding:10px 18px; border-radius:10px; font-size:14px; font-weight:600; box-shadow: 0 4px 10px rgba(0,0,0,.15); }
 
-        <!-- Input -->
-        <input type="text" class="search-input" placeholder="" />
+    .promo-section { max-width: 1100px; margin: 0 auto 26px; padding: 0 16px; }
+    .promo-title { color:#fff; font-size:24px; font-weight:800; margin: 10px 0 12px; }
+    .promo-card { background: transparent; border:5px solid #A020F0; border-radius:14px; padding:32px; display:flex; flex-direction:column; align-items:center; }
+    .promo-grid { display:grid; gap:16px; }
+    .promo-banner-img { width:100%; border-radius:8px; box-shadow: 0 6px 14px rgba(0,0,0,.25); }
+    .promo-card-group { background: transparent; border:5px solid #A020F0; border-radius:14px; padding:40px;}
+    .promo-item-block { display:flex; flex-direction:column; align-items:center; margin-bottom:16px; }
+    .promo-item-block:last-child { margin-bottom:0; }
+    .btn-secondary { background: linear-gradient(180deg, #A020F0); color:#fff; border:none; border-radius:12px; padding:10px 16px; font-weight:800; cursor:pointer; margin-top:8px; display:inline-flex; align-items:center; gap:8px; box-shadow: 0 8px 18px rgba(124,32,255,.35); }
+    .btn-secondary:hover { filter: brightness(1.06); }
+    .btn-icon { width:16px; height:16px; opacity:.9; }
+    @media(min-width: 700px){ .promo-grid { grid-template-columns: 1fr; } }
+</style>
 
-        <!-- Ikon close kanan -->
-        <img src="images/close.png" alt="Close" class="search-close">
+<?php
+    $heroBanner = asset('images/cod-event.png');
+    $bestDealBanners = [
+        asset('images/fc-mobile-event.png'),
+        asset('images/freefire-event.png'),
+    ];
+    $infoEventBanner = asset('images/dragon-nest-event.png');
+?>
+
+<div class="promo-hero">
+    <img class="promo-hero-banner" src="{{ $heroBanner }}" alt="Hero">
+    <div class="promo-hero-cta">
+        <a href="#" class="btn-primary">Baca Selengkapnya <img class="btn-icon" src="{{ asset('images/share.png') }}" alt="share"></a>
     </div>
+</div>
 
-    <div class="chip-row">
-        <div class="chip">Semua Produk</div>
-        <div class="chip">Flash Top-Up</div>
-        <div class="chip">Voucher</div>
-        <div class="chip">Game Lokal</div>
-    </div>
+<div class="promo-chips">
+    <div class="promo-chip">Semua Produk</div>
+    <div class="promo-chip">Game Mobile</div>
+    <div class="promo-chip">Game PC</div>
+    <div class="promo-chip">Game Lokal</div>
+  </div>
 
-    <div class="section-title">A</div>
-    <div class="grid">
-        @for ($i = 0; $i < 6; $i++)
-            <a href="{{ url('/pembayaran') }}" class="card" style="text-decoration:none; color:inherit;">
-                <img class="card-media" src="{{ asset('images/genshin.png') }}" alt="Game">
-                <div class="card-title">Genshin Impact</div>
-            </a>
-        @endfor
-    </div>
-
-    <div class="section-title" style="margin-top:24px;">B</div>
-    <div class="grid">
-        @for ($i = 0; $i < 3; $i++)
-            <div class="card">
-                <img class="card-media" src="{{ asset('images/genshin.png') }}" alt="Game">
-                <div class="card-title">Belum tersedia</div>
+<div class="promo-section">
+    <div class="promo-title">BEST DEAL 🔥</div>
+    <div class="promo-card-group">
+        @foreach($bestDealBanners as $src)
+            <div class="promo-item-block">
+                <img class="promo-banner-img" src="{{ $src }}" alt="Best Deal">
+                <button class="btn-secondary" type="button">Baca Selengkapnya <img class="btn-icon" src="{{ asset('images/share.png') }}" alt="share"></button>
             </div>
-        @endfor
+        @endforeach
+    </div>
+</div>
+
+<div class="promo-section">
+    <div class="promo-title">Info Event Game</div>
+    <div class="promo-grid">
+        <div class="promo-card">
+            <img class="promo-banner-img" src="{{ $infoEventBanner }}" alt="Info Event">
+            <button class="btn-secondary" type="button">Baca Selengkapnya <img class="btn-icon" src="{{ asset('images/share.png') }}" alt="share"></button>
+        </div>
     </div>
 </div>
 

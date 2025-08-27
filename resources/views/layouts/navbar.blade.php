@@ -53,7 +53,6 @@
     <!-- Menu -->
     <ul>
         <li><a href="{{ url('/') }}">Beranda</a></li>
-        <li><a href="{{ url('/joki') }}">Joki</a></li>
         <li><a href="{{ url('/game') }}">Game</a></li>
         <li><a href="{{ url('/afiliasi') }}">Afiliasi</a></li>
         <li><a href="{{ url('/promo') }}">Promo</a></li>
