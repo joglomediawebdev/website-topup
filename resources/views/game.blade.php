@@ -75,51 +75,72 @@
 
     .search-bar {
         position: relative;
-        height: 40px;
+        height: 48px;                /* lebih tinggi biar oval */
         display: flex;
         align-items: center;
-        padding: 0 44px 0 16px;
-        border-radius: 22px;
-        background: rgba(255,255,255,0.25);
-        border: 1px solid rgba(255,255,255,0.45);
-        color: #111827;
+        padding: 0 44px 0 44px;      /* kiri & kanan cukup untuk ikon */
+        border-radius: 9999px;       /* full oval */
+        background: #5b4b66;         /* warna ungu sesuai gambar */
+        color: #fff;                 /* teks & ikon jadi putih */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.25); /* shadow biar timbul */
     }
+
     .search-input {
         flex: 1;
         border: none;
         outline: none;
         background: transparent;
-        color: #111827;
-        font-size: 14px;
+        color: #fff;                 /* teks input putih */
+        font-size: 16px;             /* agak lebih besar */
     }
-    .search-close {
+
+    .search-icon {
         position: absolute;
-        right: 12px;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: #7c6aa1;
-        color: #fff;
-        font-size: 12px;
-        display: grid;
-        place-items: center;
+        left: 16px;
+        width: 20px;
+        height: 20px;
+        color: #fff;                 /* ikon kiri putih */
         cursor: pointer;
     }
 
-    .chip-row {
+    .search-close {
+        position: absolute;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+        color: #fff;                 /* hanya ikon X putih */
+        font-size: 18px;
         display: flex;
-        gap: 12px;
-        margin: 12px 0 18px;
-        flex-wrap: wrap;
-    }
-    .chip {
-        background: #e7def2;
-        color: #2c2150;
-        border: 1px solid #cbb6ec;
-        padding: 6px 12px;
-        border-radius: 8px;
-        font-size: 12px;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
+        background: none;            /* hilangkan lingkaran background */
+    }
+
+    .chip-row {
+    display: flex;
+    justify-content: space-between; /* biar merata */
+    align-items: center;
+    gap: 16px; /* jarak antar chip */
+    margin: 12px 0 18px;
+    flex-wrap: nowrap; /* biar tetap satu baris */
+    }
+
+    .chip {
+        flex: 1; /* semua chip punya lebar sama */
+        text-align: center;
+        background: #5b4b66;
+        color: #ffffff;
+        padding: 12px 0; /* tinggi lebih proporsional */
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .chip:hover {
+        background: #463553; /* warna lebih gelap saat hover */
     }
 
     .section-title {
@@ -190,8 +211,14 @@
     </div>
 
     <div class="search-bar">
-        <input class="search-input" type="text" placeholder="Cari game…" />
-        <div class="search-close">×</div>
+        <!-- Ikon search kiri -->
+        <img src="images/search.png" alt="Search" class="search-icon">
+
+        <!-- Input -->
+        <input type="text" class="search-input" placeholder="" />
+
+        <!-- Ikon close kanan -->
+        <img src="images/close.png" alt="Close" class="search-close">
     </div>
 
     <div class="chip-row">
@@ -204,10 +231,10 @@
     <div class="section-title">A</div>
     <div class="grid">
         @for ($i = 0; $i < 6; $i++)
-            <div class="card">
+            <a href="{{ url('/pembayaran') }}" class="card" style="text-decoration:none; color:inherit;">
                 <img class="card-media" src="{{ asset('images/genshin.png') }}" alt="Game">
                 <div class="card-title">Genshin Impact</div>
-            </div>
+            </a>
         @endfor
     </div>
 
