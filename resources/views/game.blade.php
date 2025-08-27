@@ -2,7 +2,8 @@
     body {
         margin: 0;
         padding: 0;
-        background: #8f79a3; /* ungu lembut seperti gambar */
+        background: #8f79a3 url('{{ asset('images/background-game-page.png') }}') no-repeat center center fixed; /* ungu + gambar */
+        background-size: full;
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
 
@@ -183,7 +184,9 @@
 <div class="page-wrapper">
     <div class="title-row">
         <div class="back-icon"></div>
-        <div style="font-size:18px; font-weight:700;">Game</div>
+        <a href="{{ url('/') }}" style="font-size:18px; font-weight:700; color:inherit; text-decoration:none;">
+            Beranda
+        </a>
     </div>
 
     <div class="search-bar">

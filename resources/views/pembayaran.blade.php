@@ -2,7 +2,8 @@
     body {
         margin: 0;
         padding: 0;
-        background: #8f79a3; /* ungu lembut seperti gambar */
+        background: #8f79a3 url('{{ asset('images/background-game-page.png') }}') no-repeat center center fixed; /* ungu + gambar */
+        background-size: cover;
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
 
@@ -192,10 +193,11 @@
     .product-body { padding: 10px; display: grid; gap: 6px; }
     .price { font-weight: 700; color: #6b21a8; font-size: 13px; }
     .btn { background: #6b21a8; color: #fff; border: none; border-radius: 8px; padding: 8px 10px; cursor: pointer; font-weight: 600; }
-    .btn.secondary { background: #e5e7eb; color: #111827; }
+    .btn.secondary { background: #6b21a8; color: #ffffff; }
 
     .checkout-row { display: grid; gap: 12px; }
-    .checkout-item { display: grid; grid-template-columns: 1fr auto; gap: 8px; font-size: 13px; padding: 6px 0; border-bottom: 1px solid #e5e7eb; }
+    .checkout-item { display: grid; grid-template-columns: 1fr auto; gap: 8px; font-size: 13px; padding: 6px 0; border-bottom: none; }
+    .checkout-item.divider { border-top: 2px solid #e5e7eb; }
     .muted { color: #6b7280; font-size: 12px; }
 
     @media (max-width: 980px){ .layout { grid-template-columns: 1fr; } }
@@ -363,7 +365,7 @@
                     <div class="checkout-item"><div>Payment</div><div class="muted">-</div></div>
                     <div class="checkout-item"><div>Alamat Email</div><div class="muted">-</div></div>
                     <div class="checkout-item"><div>Metode Pembayaran</div><div class="muted">-</div></div>
-                    <div class="checkout-item"><div>Biaya Admin</div><div class="muted">IDR 0</div></div>
+                    <div class="checkout-item divider"><div>Biaya Admin</div><div class="muted">IDR 0</div></div>
                     <div class="checkout-item"><div>Total</div><div class="muted">IDR 0</div></div>
                 </div>
                 <button class="btn" style="width:100%; margin-top:12px;">Bayar</button>
@@ -396,6 +398,7 @@
                     <li>Pilih jumlah Genesis Crystals yang kamu inginkan.</li>
                     <li>Pilih metode pembayaran favoritmu.</li>
                     <li>Nikmati item dalam game setelah pembayaran berhasil.</li>
+                    <li>Jangan lupa topup kembali disini!</li>
                 </ol>
             </div>
         </div>

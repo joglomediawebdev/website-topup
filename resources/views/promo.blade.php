@@ -2,7 +2,8 @@
     body {
         margin: 0;
         padding: 0;
-        background: #8f79a3; /* ungu lembut seperti gambar */
+        background: #8f79a3 url('{{ asset('images/promo-background.png') }}') no-repeat center top fixed;
+        background-size: full;
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
 
@@ -180,107 +181,83 @@
 </nav>
 
 
-<!-- PROMO SECTION -->
+<div class="page-wrapper">
+    <div class="title-row">
+        <div class="back-icon"></div>
+        <a href="{{ url('/') }}" style="font-size:18px; font-weight:700; color:inherit; text-decoration:none;">
+            Beranda
+        </a>
+    </div>
+    
+</div>
+<!-- PROMO SECTION NEW LAYOUT -->
 <style>
-    /* Container dan tata letak promo */
-    .promo-wrapper {
-        background-color: #7a5a8c33; /* ungu soft transparan */
-        padding: 24px 12px;
-    }
+    .promo-hero { max-width: 1100px; margin: 18px auto 10px; padding: 0 16px; }
+    .promo-hero-banner { width: 100%; border-radius: 10px; box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+    .promo-hero-cta { display: grid; place-items: center; margin-top: 10px; }
+    .btn-primary { background: linear-gradient(180deg, #A020F0); color: #fff; border: none; border-radius: 14px; padding: 12px 20px; font-weight: 800; cursor: pointer; box-shadow: 0 10px 20px rgba(124,32,255,.45); display:inline-flex; align-items:center; gap:8px; text-decoration:none; }
+    .btn-primary:hover { filter: brightness(1.06); }
 
-    .promo-container {
-        max-width: 980px;
-        margin: 0 auto;
-        background-color: #7a5a8c66; /* ungu lembut */
-        border: 3px solid #6b21a8;
-        border-radius: 12px;
-        padding: 28px 18px 36px 18px;
-    }
+    .promo-chips { display:flex; gap:24px; justify-content:center; margin: 18px 0 26px; flex-wrap:wrap; }
+    .promo-chip { background:#5b4b66; color:#ffffff; border:none; padding:10px 18px; border-radius:10px; font-size:14px; font-weight:600; box-shadow: 0 4px 10px rgba(0,0,0,.15); }
 
-    .promo-header {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 20px;
-        margin-bottom: 16px;
-    }
-
-    .promo-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 24px 0 38px 0;
-    }
-
-    .promo-banner {
-        width: 100%;
-        max-width: 720px;
-        border-radius: 8px;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-        border: 2px solid #4c1d95; /* ungu tua */
-    }
-
-    .promo-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 13px;
-        margin-top: 10px;
-        padding: 6px 10px;
-        border-radius: 999px;
-        background-color: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .promo-link:hover { color: #c084fc; border-color: #c084fc; }
-
-    @media (max-width: 640px) {
-        .promo-container { padding: 18px 10px 26px 10px; }
-        .promo-banner { max-width: 100%; }
-    }
+    .promo-section { max-width: 1100px; margin: 0 auto 26px; padding: 0 16px; }
+    .promo-title { color:#fff; font-size:24px; font-weight:800; margin: 10px 0 12px; }
+    .promo-card { background: transparent; border:5px solid #A020F0; border-radius:14px; padding:32px; display:flex; flex-direction:column; align-items:center; }
+    .promo-grid { display:grid; gap:16px; }
+    .promo-banner-img { width:100%; border-radius:8px; box-shadow: 0 6px 14px rgba(0,0,0,.25); }
+    .promo-card-group { background: transparent; border:5px solid #A020F0; border-radius:14px; padding:40px;}
+    .promo-item-block { display:flex; flex-direction:column; align-items:center; margin-bottom:16px; }
+    .promo-item-block:last-child { margin-bottom:0; }
+    .btn-secondary { background: linear-gradient(180deg, #A020F0); color:#fff; border:none; border-radius:12px; padding:10px 16px; font-weight:800; cursor:pointer; margin-top:8px; display:inline-flex; align-items:center; gap:8px; box-shadow: 0 8px 18px rgba(124,32,255,.35); }
+    .btn-secondary:hover { filter: brightness(1.06); }
+    .btn-icon { width:16px; height:16px; opacity:.9; }
+    @media(min-width: 700px){ .promo-grid { grid-template-columns: 1fr; } }
 </style>
 
-<div class="promo-wrapper">
-    <div class="promo-container">
-        <div class="promo-header">
-            <span>❮</span>
-            <span>Game</span>
-        </div>
+<?php
+    $heroBanner = asset('images/cod-event.png');
+    $bestDealBanners = [
+        asset('images/fc-mobile-event.png'),
+        asset('images/freefire-event.png'),
+    ];
+    $infoEventBanner = asset('images/dragon-nest-event.png');
+?>
 
-        <!--
-            Cara menambah/menghapus banner:
-            - Duplikasikan blok <div class="promo-item"> di bawah ini
-            - Ganti atribut src gambar dengan file Anda di folder public/images
-            - Ganti href pada tautan jika diperlukan
-        -->
+<div class="promo-hero">
+    <img class="promo-hero-banner" src="{{ $heroBanner }}" alt="Hero">
+    <div class="promo-hero-cta">
+        <a href="#" class="btn-primary">Baca Selengkapnya <img class="btn-icon" src="{{ asset('images/share.png') }}" alt="share"></a>
+    </div>
+</div>
 
-        <?php
-            // Anda bisa menambah atau menghapus item pada array ini secara manual
-            $promoBanners = [
-                [ 'src' => asset('images/cod-event.png'),  'href' => '#', 'alt' => 'Promo 1' ],
-                [ 'src' => asset('images/freefire-event.png'), 'href' => '#', 'alt' => 'Promo 2' ],
-                [ 'src' => asset('images/fc-mobile-event.png'),  'href' => '#', 'alt' => 'Promo 3' ],
-                [ 'src' => asset('images/event-kode-promo.png'), 'href' => '#', 'alt' => 'Promo 4' ],
-            ];
-        ?>
+<div class="promo-chips">
+    <div class="promo-chip">Semua Produk</div>
+    <div class="promo-chip">Game Mobile</div>
+    <div class="promo-chip">Game PC</div>
+    <div class="promo-chip">Game Lokal</div>
+  </div>
 
-        @foreach ($promoBanners as $promo)
-            <div class="promo-item">
-                <img class="promo-banner" src="{{ $promo['src'] }}" alt="{{ $promo['alt'] }}">
-                <a class="promo-link" href="{{ $promo['href'] }}">
-                    Baca Selengkapnya
-                    <img src="{{ asset('images/link.png') }}" alt="share" style="width:14px;height:14px;opacity:0.85;">
-                </a>
+<div class="promo-section">
+    <div class="promo-title">BEST DEAL 🔥</div>
+    <div class="promo-card-group">
+        @foreach($bestDealBanners as $src)
+            <div class="promo-item-block">
+                <img class="promo-banner-img" src="{{ $src }}" alt="Best Deal">
+                <button class="btn-secondary" type="button">Baca Selengkapnya <img class="btn-icon" src="{{ asset('images/share.png') }}" alt="share"></button>
             </div>
         @endforeach
     </div>
-    <div style="height:24px"></div>
-    <!-- spacer kecil sebelum footer -->
-    
+</div>
+
+<div class="promo-section">
+    <div class="promo-title">Info Event Game</div>
+    <div class="promo-grid">
+        <div class="promo-card">
+            <img class="promo-banner-img" src="{{ $infoEventBanner }}" alt="Info Event">
+            <button class="btn-secondary" type="button">Baca Selengkapnya <img class="btn-icon" src="{{ asset('images/share.png') }}" alt="share"></button>
+        </div>
+    </div>
 </div>
 
 <footer style="background-color: #3f2466; color: white; padding: 40px 0; width: 100%; margin: 0; box-sizing:border-box;">
