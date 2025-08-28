@@ -29,20 +29,20 @@
         });
 
         // Show all buttons with loading effect
-        document.querySelectorAll('.show-all-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const originalText = this.textContent;
-                this.textContent = 'Memuat lebih banyak game...';
-                this.style.opacity = '0.7';
+        // document.querySelectorAll('.show-all-btn').forEach(btn => {
+        //     btn.addEventListener('click', function() {
+        //         const originalText = this.textContent;
+        //         this.textContent = 'Memuat lebih banyak game...';
+        //         this.style.opacity = '0.7';
 
-                setTimeout(() => {
-                    this.textContent = originalText;
-                    this.style.opacity = '1';
-                    // Here you would typically load more games
-                    alert('Fitur ini akan segera hadir! 🎮');
-                }, 1500);
-            });
-        });
+        //         setTimeout(() => {
+        //             this.textContent = originalText;
+        //             this.style.opacity = '1';
+        //             // Here you would typically load more games
+        //             alert('Fitur ini akan segera hadir! 🎮');
+        //         }, 1500);
+        //     });
+        // });
 
         // Search functionality
         document.querySelector('.search-box').addEventListener('keypress', function(e) {

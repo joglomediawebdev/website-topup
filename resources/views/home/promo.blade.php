@@ -21,20 +21,19 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">
-            <img src="{{ asset('images/game-console-logo.png') }}" alt="Logo" style="width:50px; height:50px; margin-right:8px;">
-            Jogedin
+                <img src="{{ asset('images/game-console-logo.png') }}" alt="Logo" style="width:50px; height:50px; margin-right:8px;">
+                Jogedin
             </div>
-
             <nav>
-            <ul class="nav-links">
-                <li><a href="{{ url('/') }}">Beranda</a></li>
-                <li><a href="#joki">Joki</a></li>
-                <li><a href="{{ url('/game') }}">Game</a></li>
-                <li><a href="{{ url('#') }}">Afiliasi</a></li>
-                <li><a href="{{ url('/promo') }}">Promo</a></li>
-            </ul>
+                <ul class="nav-links">
+                    <li><a href="{{ url('/') }}">Beranda</a></li>
+                    <li><a href="#joki">Joki</a></li>
+                    <li><a href="{{ url('/game') }}">Game</a></li>
+                    <li><a href="{{ url('#') }}">Afiliasi</a></li>
+                    <li><a href="{{ url('/promo') }}">Promo</a></li>
+                </ul>
             </nav>
-
+            
             <div class="auth-buttons">
             <button class="btn btn-secondary login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">
                 <i data-lucide="log-in" class="lucide-icon"></i> Login
@@ -42,15 +41,15 @@
             <button class="btn btn-primary daftar-btn" data-bs-toggle="modal" data-bs-target="#registerModal">
                 <i data-lucide="users" class="lucide-icon"></i> Daftar
             </button>
-            </div>
         </div>
-    </header>    
 
+        </div>
+    </header>
    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content custom-modal-content text-white">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="loginModalLabel">Mau Gabung, brok?</h5>
+               <h5 class="modal-title" id="loginModalLabel">Mau Gabung, brok?</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -72,13 +71,14 @@
                         Lanjut dengan Google
                     </button>
                 </form>
-                <p class="text-center mt-4 mb-0">
-                    Sudah memiliki akun? <a href="#" class="text-white fw-bold" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Masuk</a>
-                </p>
+                    <p class="text-center mt-4 mb-0">
+                        Sudah memiliki akun? <a href="#" class="text-white fw-bold" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Masuk</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>
 
 <!-- Modal Register -->
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
@@ -113,9 +113,8 @@
             </div>
         </div>
     </div>
-</div>
+</div> 
 
-<!-- ===== Main Content ===== -->
 <div class="page-wrapper">
     <div class="title-row">
         <div class="back-icon"></div>
@@ -123,43 +122,75 @@
             Beranda
         </a>
     </div>
+    
+</div>
+<!-- PROMO SECTION NEW LAYOUT -->
+<style>
+    .promo-hero { max-width: 1100px; margin: 18px auto 10px; padding: 0 16px; }
+    .promo-hero-banner { width: 100%; border-radius: 10px; box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+    .promo-hero-cta { display: grid; place-items: center; margin-top: 10px; }
+    .btn-tersier { background: linear-gradient(180deg, #A020F0); color: #fff; border: none; border-radius: 14px; padding: 12px 20px; font-weight: 800; cursor: pointer; box-shadow: 0 10px 20px rgba(124,32,255,.45); display:inline-flex; align-items:center; gap:8px; text-decoration:none; }
+    .btn-tersier:hover { filter: brightness(1.06); }
 
-    <div class="search-bar">
-        <!-- Ikon search kiri -->
-        <img src="images/search.png" alt="Search" class="search-icon">
+    .promo-chips { display:flex; gap:24px; justify-content:center; margin: 18px 0 26px; flex-wrap:wrap; }
+    .promo-chip { background:#5b4b66; color:#ffffff; border:none; padding:10px 18px; border-radius:10px; font-size:14px; font-weight:600; box-shadow: 0 4px 10px rgba(0,0,0,.15); }
 
-        <!-- Input -->
-        <input type="text" class="search-input" placeholder="" />
+    .promo-section { max-width: 1100px; margin: 0 auto 26px; padding: 0 16px; }
+    .promo-title { color:#fff; font-size:24px; font-weight:800; margin: 10px 0 12px; }
+    .promo-card { background: transparent; border:5px solid #A020F0; border-radius:14px; padding:32px; display:flex; flex-direction:column; align-items:center; }
+    .promo-grid { display:grid; gap:16px; }
+    .promo-banner-img { width:100%; border-radius:8px; box-shadow: 0 6px 14px rgba(0,0,0,.25); }
+    .promo-card-group { background: transparent; border:5px solid #A020F0; border-radius:14px; padding:40px;}
+    .promo-item-block { display:flex; flex-direction:column; align-items:center; margin-bottom:16px; }
+    .promo-item-block:last-child { margin-bottom:0; }
+    .btn-kotak { background: linear-gradient(180deg, #A020F0); color:#fff; border:none; border-radius:12px; padding:10px 16px; font-weight:800; cursor:pointer; margin-top:8px; display:inline-flex; align-items:center; gap:8px; box-shadow: 0 8px 18px rgba(124,32,255,.35); }
+    .btn-kotak:hover { filter: brightness(1.06); }
+    .btn-icon { width:16px; height:16px; opacity:.9; }
+    @media(min-width: 700px){ .promo-grid { grid-template-columns: 1fr; } }
+</style>
 
-        <!-- Ikon close kanan -->
-        <img src="images/close.png" alt="Close" class="search-close">
+<?php
+    $heroBanner = asset('images/cod-event.png');
+    $bestDealBanners = [
+        asset('images/fc-mobile-event.png'),
+        asset('images/freefire-event.png'),
+    ];
+    $infoEventBanner = asset('images/dragon-nest-event.png');
+?>
+
+<div class="promo-hero">
+    <img class="promo-hero-banner" src="{{ $heroBanner }}" alt="Hero">
+    <div class="promo-hero-cta">
+        <a href="#" class="btn-tersier">Baca Selengkapnya <img class="btn-icon" src="{{ asset('images/share.png') }}" alt="share"></a>
     </div>
+</div>
 
-    <div class="chip-row">
-        <div class="chip">Semua Produk</div>
-        <div class="chip">Flash Top-Up</div>
-        <div class="chip">Voucher</div>
-        <div class="chip">Game Lokal</div>
-    </div>
+<div class="promo-chips">
+    <div class="promo-chip">Semua Produk</div>
+    <div class="promo-chip">Game Mobile</div>
+    <div class="promo-chip">Game PC</div>
+    <div class="promo-chip">Game Lokal</div>
+  </div>
 
-    <div class="section-title">A</div>
-    <div class="grid">
-        @for ($i = 0; $i < 6; $i++)
-            <a href="{{ url('/pembayaran') }}" class="card" style="text-decoration:none; color:inherit;">
-                <img class="card-media" src="{{ asset('images/genshin.png') }}" alt="Game">
-                <div class="card-title">Genshin Impact</div>
-            </a>
-        @endfor
-    </div>
-
-    <div class="section-title" style="margin-top:24px;">B</div>
-    <div class="grid">
-        @for ($i = 0; $i < 3; $i++)
-            <div class="card">
-                <img class="card-media" src="{{ asset('images/genshin.png') }}" alt="Game">
-                <div class="card-title">Belum tersedia</div>
+<div class="promo-section">
+    <div class="promo-title">BEST DEAL 🔥</div>
+    <div class="promo-card-group">
+        @foreach($bestDealBanners as $src)
+            <div class="promo-item-block">
+                <img class="promo-banner-img" src="{{ $src }}" alt="Best Deal">
+                <button class="btn-kotak" type="button">Baca Selengkapnya <img class="btn-icon" src="{{ asset('images/share.png') }}" alt="share"></button>
             </div>
-        @endfor
+        @endforeach
+    </div>
+</div>
+
+<div class="promo-section">
+    <div class="promo-title">Info Event Game</div>
+    <div class="promo-grid">
+        <div class="promo-card">
+            <img class="promo-banner-img" src="{{ $infoEventBanner }}" alt="Info Event">
+            <button class="btn-kotak" type="button">Baca Selengkapnya <img class="btn-icon" src="{{ asset('images/share.png') }}" alt="share"></button>
+        </div>
     </div>
 </div>
 
@@ -358,6 +389,17 @@
         color: #111827;
     }
 
+    .main-nav {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(20px);
+    padding: 0.8rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
     @media (max-width: 900px){
         .grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -366,5 +408,4 @@
         .card-media { height: 200px; }
     }
 </style>
-
 <script src="{{ asset ('js/main.js')}}"></script>

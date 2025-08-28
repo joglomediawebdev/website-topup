@@ -20,14 +20,17 @@
     <!-- Header Navigation -->
     <header class="header">
         <div class="nav-container">
-            <div class="logo">Jogedin</div>
+            <div class="logo">
+                <img src="{{ asset('images/game-console-logo.png') }}" alt="Logo" style="width:50px; height:50px; margin-right:8px;">
+                Jogedin
+            </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#beranda">Beranda</a></li>
                     <li><a href="#joki">Joki</a></li>
-                    <li><a href="#game">Game</a></li>
-                    <li><a href="#afiliasi">Afiliasi</a></li>
-                    <li><a href="#promo">Promo</a></li>
+                    <li><a href="{{ url('/game') }}">Game</a></li>
+                    <li><a href="{{ url('#') }}">Afiliasi</a></li>
+                    <li><a href="{{ url('/promo') }}">Promo</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
@@ -45,7 +48,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content custom-modal-content text-white">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="loginModalLabel">Mau Gabung, brok?</h5>
+               <h5 class="modal-title" id="loginModalLabel">Mau Gabung, brok?</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -67,13 +70,14 @@
                         Lanjut dengan Google
                     </button>
                 </form>
-                <p class="text-center mt-4 mb-0">
-                    Sudah memiliki akun? <a href="#" class="text-white fw-bold" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Masuk</a>
-                </p>
+                    <p class="text-center mt-4 mb-0">
+                        Sudah memiliki akun? <a href="#" class="text-white fw-bold" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Masuk</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>
 
 <!-- Modal Register -->
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
@@ -108,7 +112,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> 
 
     <!-- Hero Section -->
     <section class="hero" id="beranda">
@@ -117,7 +121,7 @@
                 <h1>Top Up aja njr</h1>
                 <p>Hamburkanlah duit-duitmu itu kawan, jangan pikir dua kali. Gaslah topup sampe gabisa makan. Makan siang skin-skin cakep juga kenyang bwanggg!!!</p>
                 <div class="cta-buttons">
-                    <a href="#promo" class="btn btn-primary">
+                    <a href="{{ url('/promo') }}" class="btn btn-primary">
                         <i data-lucide="link"></i>
                         Cek Promo
                     </a>
@@ -134,43 +138,43 @@
     <section class="section" id="game">
         <h2 class="section-title">Game Popular</h2>
         <div class="game-grid">
-            <a href="">
+            <a href="{{ url('/pembayaran') }}">
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
+                        <img src="{{ asset('images/genshin.png') }}" alt="Genshin">
+                    </div>
+                    <div class="game-title">Genshin</div>
+                </div>
+            </a>
+            <a href="{{ url('/pembayaran2') }}">
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="{{ asset('images/free-fire.png') }}" alt="Free Fire">
                     </div>
                     <div class="game-title">Free Fire</div>
                 </div>
             </a>
-            <a href="">
+            <a href="{{ url('/pembayaran3') }}">
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
+                        <img src="{{ asset('images/mobile-legend.png') }}" alt="Mobile Legend">
                     </div>
-                    <div class="game-title">Free Fire</div>
+                    <div class="game-title">Mobile Legend</div>
                 </div>
             </a>
-            <a href="">
+            <a href="{{ url('/pembayaran4') }}">
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
+                        <img src="{{ asset('images/valorant.png') }}" alt="Valorant">
                     </div>
-                    <div class="game-title">Free Fire</div>
-                </div>
-            </a>
-            <a href="">
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
-                    </div>
-                    <div class="game-title">Free Fire</div>
+                    <div class="game-title">Valorant</div>
                 </div>
             </a>
         </div>
 
         <h2 class="section-title">Game Seluler</h2>
         <div class="game-grid">
-            <a href="">
+            <a href="{{ url('/pembayaran') }}">
                 <div class="game-card">
                     <div class="game-image">
                         <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
@@ -178,7 +182,7 @@
                     <div class="game-title">Free Fire</div>
                 </div>
             </a>
-            <a href="">
+            <a href="{{ url('/pembayaran') }}">
                 <div class="game-card">
                     <div class="game-image">
                         <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
@@ -186,7 +190,7 @@
                     <div class="game-title">Free Fire</div>
                 </div>
             </a>
-            <a href="">
+            <a href="{{ url('/pembayaran') }}">
                 <div class="game-card">
                     <div class="game-image">
                         <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
@@ -194,7 +198,7 @@
                     <div class="game-title">Free Fire</div>
                 </div>
             </a>
-            <a href="">
+            <a href="{{ url('/pembayaran') }}">
                 <div class="game-card">
                     <div class="game-image">
                         <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
@@ -203,12 +207,12 @@
                 </div>
             </a>
         </div>
-        <button class="show-all-btn">Tampilkan Semua</button>
+        <a href="{{ url('/game') }}" class="show-all-btn">Tampilkan Semua</a>
 
         <h2 class="section-title">Game PC</h2>
         <div class="game-grid">
             <div class="game-grid">
-                <a href="">
+                <a href="{{ url('/pembayaran') }}">
                     <div class="game-card">
                         <div class="game-image">
                             <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
@@ -216,7 +220,7 @@
                         <div class="game-title">Free Fire</div>
                     </div>
                 </a>
-                <a href="">
+                <a href="{{ url('/pembayaran') }}">
                     <div class="game-card">
                         <div class="game-image">
                             <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
@@ -224,7 +228,7 @@
                         <div class="game-title">Free Fire</div>
                     </div>
                 </a>
-                <a href="">
+                <a href="{{ url('/pembayaran') }}">
                     <div class="game-card">
                         <div class="game-image">
                             <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
@@ -232,7 +236,7 @@
                         <div class="game-title">Free Fire</div>
                     </div>
                 </a>
-                <a href="">
+                <a href="{{ url('/pembayaran') }}">
                     <div class="game-card">
                         <div class="game-image">
                             <img src="{{ asset('images/genshin.png') }}" alt="Free Fire">
@@ -242,7 +246,7 @@
                 </a>
             </div>
         </div>
-        <button class="show-all-btn">Tampilkan Semua</button>
+        <a href="{{ url('/game') }}" class="show-all-btn">Tampilkan Semua</a>
     </section>
 
     <!-- Features Section -->
@@ -280,45 +284,53 @@
     </section>
 
     <!-- Footer -->
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Jogedin</h3>
-                <p>Platform gaming terdepan dengan layanan top up dan joki terpercaya. Nikmati pengalaman gaming terbaik bersama kami.</p>
-                <h3>Hubungi Kami</h3>
-                <div class="social-links">
-                    <a href="#" title="WhatsApp">
-                        <i data-lucide="phone"></i>
-                    </a>
-                    <a href="#" title="Instagram">
-                        <i data-lucide="instagram"></i>
-                    </a>
-                    <a href="#" title="Facebook">
-                        <i data-lucide="facebook"></i>
-                    </a>
-                    <a href="#" title="Email">
-                        <i data-lucide="mail"></i>
-                    </a>
+    <footer style="background-color: #3f2466; color: white; padding: 40px 0; width: 100%; margin: 0; box-sizing:border-box;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; padding: 0 10px; max-width: 1800px; margin: 0 auto;">
+            <!-- Kolom Kiri -->
+            <div style="max-width: 400px;">
+                <h2 style="font-size: 30px; font-weight: bold; margin-bottom: 16px;">Jogedin</h2>
+                <p style="line-height: 1.6; font-size: 14px; margin-bottom: 20px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare cursus sed nunc eget dictum.
+                    Sed ornare cursus sed nunc eget dictum. Sed ornare cursus sed nunc eget dictum.
+                </p>
+
+                <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px;">Hubungi Kami</h3>
+                <div style="display: flex; gap: 12px;">
+                    <a href="#"><img src="{{ asset('images/whatsapp.png') }}" alt="WhatsApp" style="width:40px;height:40px;"></a>
+                    <a href="#"><img src="{{ asset('images/instagram.png') }}" alt="Instagram" style="width:40px;height:40px;"></a>
+                    <a href="#"><img src="{{ asset('images/telegram.png') }}" alt="Telegram" style="width:40px;height:40px;"></a>
+                    <a href="#"><img src="{{ asset('images/gmail.png') }}" alt="Gmail" style="width:40px;height:40px;"></a>
                 </div>
             </div>
-            <div class="footer-section">
-                <h3>Layanan</h3>
-                <a href="#game">Promo Gaming</a>
-                <a href="#joki">Hubungi Team</a>
-                <a href="#afiliasi">Pusat Bantuan</a>
-                <a href="#promo">Syarat dan Ketentuan</a>
-            </div>
-            <div class="footer-section">
-                <h3>Informasi</h3>
-                <p>© 2024, Jogedin Gaming Platform</p>
-                <p>Semua Hak Dilindungi Undang-Undang</p>
-                <a href="#">Kebijakan Privasi</a>
-                <a href="#">Terms of Service</a>
+
+            <!-- Kolom Kanan -->
+            <div>
+                <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 12px;">Laman</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+                    <li><a href="{{ url('/promo') }}" style="color:white; text-decoration:none;">Promo</a></li>
+                    <li><a href="{{ url('/contact') }}" style="color:white; text-decoration:none;">Hubungi Kami</a></li>
+                    <li><a href="{{ url('/support') }}" style="color:white; text-decoration:none;">Pusat Bantuan</a></li>
+                    <li><a href="{{ url('/privacy') }}" style="color:white; text-decoration:none;">Kebijakan Privasi</a></li>
+                </ul>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2024 Jogedin Gaming Platform. All rights reserved.</p>
+
+        <!-- Garis pemisah -->
+        <div style="padding: 0 10px; max-width: 1800px; margin: 0 auto;">
+            <hr style="border: 0; border-top: 1px solid #ccc; margin: 30px 0;">
+        </div>
+
+        <!-- Bagian Bawah Footer -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 0 10px; max-width: 1800px; margin: 0 auto;">
+            <!-- Logo bawah -->
+            <div style="font-size: 18px; font-weight: bold;">
+                <img src="{{ asset('images/game-console-logo.png') }}" alt="Logo" style="width:64px; height:60px;">
+            </div>
+
+            <!-- Hak Cipta -->
+            <div style="background-color: white; color: #3f2466; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 500;">
+                © 2025 Jogedin. Semua Hak Cipta
+            </div>
         </div>
     </footer>
-    <script src="{{ asset ('js/main.js')}}"></script>
+<script src="{{ asset ('js/main.js')}}"></script>
