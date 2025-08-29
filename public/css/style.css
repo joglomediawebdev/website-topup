@@ -392,65 +392,172 @@ body {
     text-decoration: none;
 }
 
-/* Features Section */
+/* Updated Features Section CSS */
 .features {
     background: linear-gradient(
         135deg,
-        rgba(30, 27, 75, 0.6),
-        rgba(55, 48, 163, 0.4)
+        rgba(139, 92, 246, 0.15),
+        rgba(168, 85, 247, 0.1)
     );
     padding: 4rem 2rem;
     margin: 2rem 0;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    border-radius: 2rem;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 2rem auto;
 }
 
-.feature-card {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 2.5rem;
+.features-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.features-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.features-header {
+    margin-bottom: 1rem;
+}
+
+.features-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.features-header p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 1rem;
-    border-left: 4px solid #8b5cf6;
+    border-left: 4px solid #a855f7;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
 }
 
-.feature-card:hover {
-    background: rgba(255, 255, 255, 0.12);
-    transform: translateX(10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
 }
 
 .feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    color: #a855f7;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .feature-icon svg {
-    width: 3rem;
-    height: 3rem;
+    width: 24px;
+    height: 24px;
+    color: white;
 }
 
-.feature-title {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: #c4b5fd;
+.feature-content h3 {
+    font-size: 1.2rem;
     font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
 }
 
-.feature-description {
-    line-height: 1.7;
-    opacity: 0.85;
-    color: rgba(255, 255, 255, 0.8);
+.feature-content p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.features-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.promo-image {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.promo-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.promo-image img {
+    width: 100%;
+    height: 380px; /* Increased height from 200px to 300px */
+    object-fit: cover;
+    display: block;
+}
+
+.promo-badge {
+    background: #f59e0b;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .features-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .features-images {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .features-header h2 {
+        font-size: 2rem;
+    }
+
+    .feature-item {
+        padding: 1rem;
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .feature-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    .promo-image img {
+        height: 160px;
+    }
 }
 
 /* Footer */
