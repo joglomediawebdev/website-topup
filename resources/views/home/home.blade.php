@@ -12,9 +12,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap JS (diperlukan untuk modal) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
 </head>
+<style>
+    body {
+        font-family: "Arial", sans-serif;
+        background:
+            linear-gradient(rgba(73, 15, 173, 0.4), rgba(73, 15, 173, 0.4)),
+            url("/images/background-gameover.png") no-repeat center center fixed;
+        background-size: 50%;
+        /* Zoom out gambar, bisa ubah ke 110% atau 100% */
+        color: white;
+        overflow-x: hidden;
+    }
+</style>
 
 <body>
     <!-- Header Navigation -->
@@ -301,64 +311,72 @@
 
         <div class="features-images">
             <div class="promo-image">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=300&h=200&fit=crop" alt="Mobile Legends">
-                <div class="promo-badge">Special Event</div>
+                <img src="{{ asset('images/features1.png') }}" alt="Mobile Legends">
             </div>
             <div class="promo-image">
-                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop" alt="Genshin Impact">
-                <div class="promo-badge">Special Event</div>
+                <img src="{{ asset('images/features2.png') }}" alt="Genshin Impact">
             </div>
         </div>
     </div>
 </section>
 
 <!-- Footer -->
-<footer style="background-color: #3f2466; color: white; padding: 40px 0; width: 100%; margin: 0; box-sizing:border-box;">
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; padding: 0 10px; max-width: 1800px; margin: 0 auto;">
-        <!-- Kolom Kiri -->
-        <div style="max-width: 400px;">
-            <h2 style="font-size: 30px; font-weight: bold; margin-bottom: 16px;">Jogedin</h2>
-            <p style="line-height: 1.6; font-size: 14px; margin-bottom: 20px;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare cursus sed nunc eget dictum.
-                Sed ornare cursus sed nunc eget dictum. Sed ornare cursus sed nunc eget dictum.
-            </p>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- Left Column -->
+            <div class="footer-left">
+                <div class="footer-logo">Jogedin</div>
+                <p class="footer-description">
+                    Platform gaming terdepan untuk top-up game favorit Anda. Dari Mobile Legends, Free Fire, Genshin Impact hingga berbagai game populer lainnya. Proses cepat, aman, dan terpercaya.
+                </p>
 
-            <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 12px;">Hubungi Kami</h3>
-            <div style="display: flex; gap: 12px;">
-                <a href="#"><img src="{{ asset('images/whatsapp.png') }}" alt="WhatsApp" style="width:40px;height:40px;"></a>
-                <a href="#"><img src="{{ asset('images/instagram.png') }}" alt="Instagram" style="width:40px;height:40px;"></a>
-                <a href="#"><img src="{{ asset('images/telegram.png') }}" alt="Telegram" style="width:40px;height:40px;"></a>
-                <a href="#"><img src="{{ asset('images/gmail.png') }}" alt="Gmail" style="width:40px;height:40px;"></a>
+                <div class="footer-contact">
+                    <h3>Hubungi Kami</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <img src="{{ asset('images/whatsapp.png') }}" alt="WhatsApp">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="{{ asset('images/instagram.png') }}" alt="Instagram">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="{{ asset('images/telegram.png') }}" alt="Telegram">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="{{ asset('images/gmail.png') }}" alt="Gmail">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="footer-right">
+                <div class="footer-links">
+                    <h3>Laman</h3>
+                    <ul>
+                        <li><a href="{{ url('/promo') }}">Promo</a></li>
+                        <li><a href="{{ url('/contact') }}">Hubungi Kami</a></li>
+                        <li><a href="{{ url('/support') }}">Pusat Bantuan</a></li>
+                        <li><a href="{{ url('/privacy') }}">Kebijakan Privasi</a></li>
+                        <li><a href="{{ url('/terms') }}">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- Kolom Kanan -->
-        <div>
-            <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 12px;">Laman</h3>
-            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-                <li><a href="{{ url('/promo') }}" style="color:white; text-decoration:none;">Promo</a></li>
-                <li><a href="{{ url('/contact') }}" style="color:white; text-decoration:none;">Hubungi Kami</a></li>
-                <li><a href="{{ url('/support') }}" style="color:white; text-decoration:none;">Pusat Bantuan</a></li>
-                <li><a href="{{ url('/privacy') }}" style="color:white; text-decoration:none;">Kebijakan Privasi</a></li>
-            </ul>
-        </div>
-    </div>
+        <!-- Divider -->
+        <hr class="footer-divider">
 
-    <!-- Garis pemisah -->
-    <div style="padding: 0 10px; max-width: 1800px; margin: 0 auto;">
-        <hr style="border: 0; border-top: 1px solid #ccc; margin: 30px 0;">
-    </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-logo-bottom">
+                <img src="{{ asset('images/game-console-logo.png') }}" alt="Jogedin Logo">
+            </div>
 
-    <!-- Bagian Bawah Footer -->
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 0 10px; max-width: 1800px; margin: 0 auto;">
-        <!-- Logo bawah -->
-        <div style="font-size: 18px; font-weight: bold;">
-            <img src="{{ asset('images/game-console-logo.png') }}" alt="Logo" style="width:64px; height:60px;">
-        </div>
-
-        <!-- Hak Cipta -->
-        <div style="background-color: white; color: #3f2466; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 500;">
-            © 2025 Jogedin. Semua Hak Cipta
+            <div class="copyright-badge">
+                © 2025 Jogedin. Semua Hak Cipta
+            </div>
         </div>
     </div>
 </footer>
