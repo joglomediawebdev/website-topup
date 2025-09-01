@@ -12,7 +12,7 @@ body {
 
 /* Header Navigation */
 .header {
-    background: rgba(15, 23, 42, 0.9);
+    background: #262533;
     backdrop-filter: blur(20px);
     padding: 0.8rem 2rem;
     position: fixed;
@@ -36,7 +36,7 @@ body {
     gap: 0.5rem;
     font-size: 1.8rem;
     font-weight: bold;
-    color: #a855f7;
+    color: #000080;
 }
 
 .nav-links {
@@ -58,41 +58,6 @@ body {
 .nav-links a:hover {
     background: rgba(168, 85, 247, 0.2);
     color: #c4b5fd;
-}
-
-.search-container {
-    position: relative;
-    margin-left: auto;
-    margin-right: 1rem;
-}
-
-.search-box {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
-    color: white;
-    width: 250px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.search-box::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.search-box:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #a855f7;
-}
-
-.search-icon {
-    position: absolute;
-    left: 0.8rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
 }
 
 /* Hero Section */
@@ -133,12 +98,23 @@ body {
 .hero-content {
     flex: 0 0 55%;
     max-width: 700px;
-    background: rgba(0, 0, 0, 0.85);
     padding: 3.5rem 3rem;
     border-radius: 1.5rem;
     border: 1px solid rgba(27, 7, 73, 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    opacity: 0.7;
+    position: relative;
+}
+.hero-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    opacity: 0.5; /* Opacity hanya berlaku untuk background */
+    border-radius: 1.5rem;
+    z-index: -1; /* Letakkan di belakang konten */
 }
 
 .hero-character {
@@ -206,20 +182,20 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(135deg, #F9CC41, #F9CC41);
     color: white;
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 8px 25px #8F8F8F;
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    background: linear-gradient(135deg, #F9CC41, #F9CC41);
     color: white;
-    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+    box-shadow: 0 8px 25px #8F8F8F;
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 30px #8F8F8F;
 }
 
 .btn::before {
@@ -253,10 +229,9 @@ body {
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
     text-align: left;
-    background: linear-gradient(45deg, #ffffff, #e0e7ff);
+    background: linear-gradient(45deg, #F9CC41, #F9CC41);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* border-bottom: 3px solid #8b5cf6; */
     padding-bottom: 0.8rem;
     display: inline-block;
     font-weight: 700;
@@ -372,8 +347,8 @@ body {
 .features {
     background: linear-gradient(
         135deg,
-        rgba(139, 92, 246, 0.15),
-        rgba(168, 85, 247, 0.1)
+        rgba(86, 46, 179, 0.15),
+        rgba(86, 46, 179, 0.15)
     );
     padding: 4rem 2rem;
     margin: 2rem 0;
@@ -423,7 +398,7 @@ body {
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 1rem;
-    border-left: 4px solid #a855f7;
+    border-left: 4px solid #F9CC41;
     transition: all 0.3s ease;
 }
 
@@ -433,7 +408,7 @@ body {
 }
 
 .feature-icon {
-    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    background: linear-gradient(135deg, #F9CC41, #F9CC41);
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -489,19 +464,6 @@ body {
     display: block;
 }
 
-.promo-badge {
-    background: #f59e0b;
-    color: white;
-    padding: 0.4rem 1rem;
-    border-radius: 1rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-}
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .features-container {
@@ -538,7 +500,7 @@ body {
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    background: #262533;
     color: white;
     padding: 4rem 0 2rem;
     width: 100%;
@@ -568,8 +530,8 @@ body {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #a855f7;
-    background: linear-gradient(45deg, #a855f7, #c4b5fd);
+    color: #000080 ;
+    background: linear-gradient(45deg, #FFFFD0 , #FFFFD0 );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -705,7 +667,7 @@ body {
     margin-left: 2rem;
     white-space: nowrap;
     transition: all 0.3s ease;
-    background-color: #8f25f2;
+    background-color: #262533;
     color: white;
 }
 
@@ -808,7 +770,7 @@ body {
     border-radius: 0.5rem;
     white-space: nowrap;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    background: linear-gradient(135deg, #F9CC41, #F9CC41) !important;
     color: white !important;
     border: none !important;
 }

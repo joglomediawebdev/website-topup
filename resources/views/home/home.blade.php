@@ -17,10 +17,9 @@
     body {
         font-family: "Arial", sans-serif;
         background:
-            linear-gradient(rgba(73, 15, 173, 0.4), rgba(73, 15, 173, 0.4)),
+            #262533 /* Warna ungu polos */
             url("/images/background-gameover.png") no-repeat center center fixed;
         background-size: 50%;
-        /* Zoom out gambar, bisa ubah ke 110% atau 100% */
         color: white;
         overflow-x: hidden;
     }
@@ -32,14 +31,12 @@
         <div class="nav-container">
             <div class="logo">
                 <img src="{{ asset('images/game-console-logo.png') }}" alt="Logo" style="width:50px; height:50px; margin-right:8px;">
-                Jogedin
+
             </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#beranda">Beranda</a></li>
-                    <li><a href="#joki">Joki</a></li>
                     <li><a href="{{ url('/game') }}">Game</a></li>
-                    <li><a href="{{ url('#') }}">Afiliasi</a></li>
                     <li><a href="{{ url('/promo') }}">Promo</a></li>
                 </ul>
             </nav>
